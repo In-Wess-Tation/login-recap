@@ -1,5 +1,7 @@
 import Cookies from "js-cookie";
 import { useLoaderData } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
+import { useContext } from "react";
 
 export const loader = async () => {
     let token = Cookies.get("token")
@@ -26,12 +28,17 @@ const Secrets = () => {
 
     const data = useLoaderData();
     console.log(data)
+    const { user } = useContext(UserContext);
+
 
 
     return ( 
     <>
         <h1>Secrets</h1>
-
+        
+        <p>{user?.name}</p>
+        <p>{user?.email}</p>
+        <p>{user?.id}</p>
     </>
 
      );
