@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Secrets, {loader as secretsLoader} from "./Pages/Secrets";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Statements from "./Pages/Statements";
 
 
 export const router = createBrowserRouter(
@@ -21,6 +22,7 @@ export const router = createBrowserRouter(
                 }
                 loader={secretsLoader}
             />
+            <Route path="/statements" element={<Statements />}/>
                       
         </Route>
     )

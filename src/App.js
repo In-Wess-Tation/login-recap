@@ -1,24 +1,17 @@
-import Cookies from 'js-cookie';
 import './App.css';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Header from './components/Header';
 
 function App() {
 
-  const token = Cookies.get("token")
 
   return (
     <section className="App">
-
-      <nav>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/login"}>Login</Link>
-        {token && (<Link to={"/secrets"}>Secrets</Link>)}
-      </nav>
-
-
+      <Header />
       <main>
         <Outlet />
       </main>
+
     </section>
   );
 }
